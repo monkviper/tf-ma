@@ -1,0 +1,131 @@
+<div
+  class="promo-bar section section--full-width color-{{ section.settings.color_scheme }}"
+>
+  <div class="promo-bar__inner">
+    <div class="promo-bar__consultant">
+      <span class="promo-bar__text">{{ section.settings.consultant_text }}</span>
+      {%- if section.settings.consultant_url != blank -%}
+        <a href="{{ section.settings.consultant_url }}" class="promo-bar__consultant-link">
+          {{- section.settings.consultant_name | escape -}}
+        </a>
+      {%- else -%}
+        <span class="promo-bar__consultant-link">{{ section.settings.consultant_name | escape }}</span>
+      {%- endif -%}
+    </div>
+    {%- if section.settings.cta_text != blank -%}
+      <div class="promo-bar__cta-wrapper">
+        {%- if section.settings.cta_url != blank -%}
+          <a href="{{ section.settings.cta_url }}" class="promo-bar__cta">
+            {{- section.settings.cta_text | escape -}}
+          </a>
+        {%- else -%}
+          <span class="promo-bar__cta">{{ section.settings.cta_text | escape }}</span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+.promo-bar {
+  width: 100%;
+}
+
+.promo-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 35px;
+  padding-block: 0;
+  padding-inline: 64px;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgb(var(--color-foreground));
+}
+
+.promo-bar__consultant {
+  display: flex;
+  gap: 0.25em;
+  padding-block: 5px;
+}
+
+.promo-bar__consultant-link {
+  text-decoration: underline;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.promo-bar__cta-wrapper {
+  padding-block: 1px;
+  padding-inline-start: 5px;
+}
+
+.promo-bar__cta {
+  text-decoration: underline;
+  color: inherit;
+  font-weight: inherit;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+@media screen and (max-width: 749px) {
+  .promo-bar__inner {
+    justify-content: center;
+    min-height: auto;
+    padding: 8px 12px;
+    font-size: 12px;
+    line-height: 16px;
+    gap: 16px;
+  }
+
+  .promo-bar__cta-wrapper {
+    display: none;
+  }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.promo_bar",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "consultant_text",
+      "label": "t:settings.consultant_text",
+      "default": "Your Shop Consultant is"
+    },
+    {
+      "type": "text",
+      "id": "consultant_name",
+      "label": "t:settings.consultant_name",
+      "default": "SHOP.COM"
+    },
+    {
+      "type": "url",
+      "id": "consultant_url",
+      "label": "t:settings.consultant_url"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "t:settings.cta_text",
+      "default": "Start Your SHOP.COM Business"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "t:settings.cta_url"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-5"
+    }
+  ],
+  "enabled_on": {
+    "groups": ["header"]
+  }
+}
+{% endschema %}

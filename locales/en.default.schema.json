@@ -434,7 +434,8 @@
     "video_section": "Video",
     "view_all_button": "View all",
     "pills": "Pills",
-    "comparison_slider": "Comparison slider"
+    "comparison_slider": "Comparison slider",
+    "promo_bar": "Promo bar"
   },
   "options": {
     "above_carousel": "Above carousel",
@@ -821,6 +822,9 @@
     "columns": "Columns",
     // Layout container block name for grouping other blocks
     "content": "Content",
+    "consultant_text": "Consultant text",
+    "consultant_name": "Consultant name",
+    "consultant_url": "Consultant URL",
     "content_alignment": "Content alignment",
     "content_direction": "Content direction",
     "content_position": "Content position",
@@ -829,6 +833,8 @@
     "country_region": "Country/Region",
     "cover_image": "Cover image",
     "cover_image_size": "Cover image size",
+    "cta_text": "CTA text",
+    "cta_url": "CTA URL",
     "currency_code": "Currency code",
     "custom_height": "Custom height",
     "custom_minimum_height": "Custom minimum height",

@@ -11,6 +11,12 @@
   "type": "header",
   "name": "t:names.header",
   "sections": {
+    "promo_bar": {
+      "type": "promo-bar",
+      "settings": {
+        "color_scheme": "scheme-5"
+      }
+    },
     "header_announcements_9jGBFp": {
       "type": "header-announcements",
       "blocks": {
@@ -112,6 +118,7 @@
     }
   },
   "order": [
+    "promo_bar",
     "header_announcements_9jGBFp",
     "header_section"
   ]
